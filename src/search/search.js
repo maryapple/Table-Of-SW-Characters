@@ -1,5 +1,5 @@
 import React from 'react'
-import './input.css'
+import './search.css'
 
 const SearchPanel = () => {
     // const value = 

@@ -8,6 +8,7 @@ const Row = (props) => {
             <td>{props.height}</td>
             <td>{props.mass}</td>
             <td>{props.hair_color}</td>
+            <td>{props.skin_color}</td>
             <td>{props.eye_color}</td>
             <td>{props.birth_year}</td>
         </tr>

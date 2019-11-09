@@ -1,16 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Table from './table'
-import SearchPanel from './input'
-
-const App = () => {
-    return (
-        <div>
-            <SearchPanel />
-            <Table />
-        </div>
-    )
-}
+import App from './app'
 
 ReactDOM.render(
     <App />,
