@@ -1,17 +1,21 @@
 import React from 'react'
 import Row from '../row'
-import data from '../data'
 import './table.css'
 
-const Table = () => {
+const Table = (props) => {
 
-    const arr = data.map((elem) => {
-        return (<Row {...elem}/>)
+    const arr = props.data.map((elem) => {
+        return (
+            <Row 
+                {...elem}
+                key={elem.name}
+            />
+        )
     })
 
     return (
         <table className="table table-striped">
-            <thead class="thead-dark">
+            <thead className="thead-dark">
                 <tr>
                     <th scope="col">name</th>
                     <th scope="col">height</th>
@@ -26,7 +30,6 @@ const Table = () => {
                 {arr}
             </tbody>
         </table>
-        
     )
 }
 
