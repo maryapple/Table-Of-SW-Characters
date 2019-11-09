@@ -9,6 +9,7 @@ const Table = (props) => {
             <Row 
                 {...elem}
                 key={elem.name}
+                theHighest={props.theHighest}
             />
         )
     })

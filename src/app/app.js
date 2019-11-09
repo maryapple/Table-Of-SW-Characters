@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Table from '../table'
 import SearchPanel from '../search'
 import data from '../data'
+import getTheHighest from '../theHighest'
 
 export default class App extends Component {
 
@@ -25,8 +26,18 @@ export default class App extends Component {
         this.setState({ term })
     }
 
+/*     getTheHighest(items) {
+        return (items) => {
+            Math.max(...items.map(
+                person => person.height
+            ))
+        }
+    } */
+
     render () {
         const visibleData = this.search(data, this.state.term)
+
+        const theHighest = getTheHighest(data)
 
         return (
             <div className="container">
@@ -36,7 +47,8 @@ export default class App extends Component {
                     term={this.state.term}
                 />
                 <Table
-                    data={visibleData} />
+                    data={visibleData}
+                    theHighest={theHighest} />
             </div>
         )
     }   
