@@ -1,30 +1,44 @@
 import React from 'react';
-import Link from '../Link.react';
+import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer';
+import App from './app'
+import SearchPanel from './search';
+import Table from './table';
 
-it('renders correctly', () => {
-    const tree = renderer
-        .create(<Link page="http://www.facebook.com">Facebook</Link>)
-        .toJSON();
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
+});
+
+it('search renders correctly', () => {
+    const search = renderer.create(<SearchPanel  />)
+    const tree = search.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
-it('renders as an anchor when no page is set', () => {
-    const tree = renderer.create(<Link>Facebook</Link>).toJSON();
+it('table renders correctly', () => {
+    const table = renderer
+        .create(<Table data={
+            [
+                {
+                "name": "Luke Skywalker",
+                "height": "172",
+                "mass": "77",
+                "hair_color": "blond",
+                "skin_color": "fair",
+                "eye_color": "blue",
+                "birth_year": "19BBY"
+                }
+            ]
+        } />)
+    const tree = table.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
-it('properly escapes quotes', () => {
-    const tree = renderer
-        .create(<Link>{"\"Facebook\" \\'is \\ 'awesome'"}</Link>)
-        .toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-it('changes the class when hovered', () => {
-    const component = renderer.create(
-        <Link page="http://www.facebook.com">Facebook</Link>
-    );
+it('changes the data in the input when user writes something ', () => {
+    const component = renderer.create(<SearchPanel />)
+    
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
