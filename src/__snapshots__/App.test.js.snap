@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`changes the data in the input when user writes something  1`] = `
+<div>
+  <input
+    className="form-control col-sm-2"
+    onChange={[Function]}
+    placeholder="Search"
+    type="search"
+    value=""
+  />
+</div>
+`;
+
+exports[`search renders correctly 1`] = `
+<div>
+  <input
+    className="form-control col-sm-2"
+    onChange={[Function]}
+    placeholder="Search"
+    type="search"
+    value=""
+  />
+</div>
+`;
+
+exports[`table renders correctly 1`] = `
+<table
+  className="table table-striped"
+>
+  <thead
+    className="thead-dark"
+  >
+    <tr>
+      <th
+        scope="col"
+      >
+        name
+      </th>
+      <th
+        scope="col"
+      >
+        height
+      </th>
+      <th
+        scope="col"
+      >
+        mass
+      </th>
+      <th
+        scope="col"
+      >
+        hair_color
+      </th>
+      <th
+        scope="col"
+      >
+        skin_color
+      </th>
+      <th
+        scope="col"
+      >
+        eye_color
+      </th>
+      <th
+        scope="col"
+      >
+        birth_year
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      style={
+        Object {
+          "backgroundColor": "",
+        }
+      }
+    >
+      <td>
+        Luke Skywalker
+      </td>
+      <td>
+        172
+      </td>
+      <td>
+        77
+      </td>
+      <td>
+        blond
+      </td>
+      <td>
+        fair
+      </td>
+      <td>
+        blue
+      </td>
+      <td>
+        19BBY
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
